@@ -1,5 +1,7 @@
 from math import inf
 
+binary_sum = lambda a,b : bin(int(a, 2) + int(b, 2))
+
 def decimalToBinary(n): 
     return bin(n).replace("0b", "") 
 
@@ -11,8 +13,8 @@ def int_task(nums: list[int]):
         if (diff != 0):
             binary_representation[i] = ("0" * diff) + binary_representation[i]
     
-    minValue = inf
-    print(int(binary_representation[1], 2))
+    print(binary_representation)
+
 
 row = list(map(int,input().split(' ')))
 
