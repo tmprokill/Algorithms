@@ -12,8 +12,15 @@ def int_task(nums: list[int]):
         diff = maxLength - len(binary_representation[i])
         if (diff != 0):
             binary_representation[i] = ("0" * diff) + binary_representation[i]
-    
-    print(binary_representation)
+        binary_representation[i] = ''.join(sorted(binary_representation[i]))
+
+    goal = sum(i == '1' for i in binary_representation[2])
+    for i in range(binary_representation[0]):
+        for j in range(binary_representation[1]):
+            currSum = binary_sum(binary_representation[i] + binary_representation[j])
+            if sum(i == '1' for i in currSum) == goal:
+                return currSum
+   
 
 
 row = list(map(int,input().split(' ')))
